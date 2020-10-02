@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class RockCollision : MonoBehaviour
 {
     //Creating variables
+   
     public GameObject player, lifeOne, lifeTwo, lifeThree;
     public Button button;
+    public AudioSource hit;
     public int life;
     // Start is called before the first frame update
     void Start()
@@ -32,7 +34,8 @@ public class RockCollision : MonoBehaviour
 
             //Disable the rock
             col.gameObject.SetActive(false);
-
+            //Play hit sound
+            hit.Play();
             //Decrement Life by 1 everytime player hits the rock
             life--;
 
@@ -48,6 +51,7 @@ public class RockCollision : MonoBehaviour
             //If life reaches 0, game over.
             if (life == 0)
             {
+                
                 lifeOne.gameObject.SetActive(false);
                 player.gameObject.SetActive(false);
                 button.gameObject.SetActive(true);
