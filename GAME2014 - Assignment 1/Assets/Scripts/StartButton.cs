@@ -5,15 +5,14 @@ using UnityEngine.UI;
 
 public class StartButton : MonoBehaviour
 {
-
+    //creating buttons, and game objects
     public Button button;
-    public Button buttonTwo;
-    public Button buttonThree;
     public GameObject player;
-    public Text instText;
+    public GameObject textPanel, rockPanel, mainPanel;
     // Start is called before the first frame update
     void Start()
     {
+        //Enable Button Click
         button.onClick.AddListener(SetButton);
     }
 
@@ -25,11 +24,13 @@ public class StartButton : MonoBehaviour
     public void SetButton()
 
     {
+        //Enable Player, Rock Panel
         player.gameObject.SetActive(true);
-        button.gameObject.SetActive(false);
-        buttonTwo.gameObject.SetActive(false);
-        instText.gameObject.SetActive(false);
-        buttonThree.gameObject.SetActive(false);
+        rockPanel.gameObject.SetActive(true);
+
+        //Disables the buttons.
+        mainPanel.gameObject.SetActive(false);
+        textPanel.gameObject.SetActive(false);
     }
 
 }

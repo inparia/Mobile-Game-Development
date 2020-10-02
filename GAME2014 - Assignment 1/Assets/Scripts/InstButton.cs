@@ -5,12 +5,13 @@ using UnityEngine.UI;
 
 public class InstButton : MonoBehaviour
 {
+    //creating buttons, and game objects
     public Button button;
-    public Text text;
+    public GameObject panel;
     // Start is called before the first frame update
     void Start()
     {
-        text.gameObject.SetActive(false);
+        //Enable Button Click
         button.onClick.AddListener(SetButton);
     }
 
@@ -22,7 +23,9 @@ public class InstButton : MonoBehaviour
     public void SetButton()
 
     {
-        text.gameObject.SetActive(true);
+        //Displays Instruction Panel
+        panel.gameObject.SetActive(true);
+        //Disables instruction button
         button.gameObject.SetActive(false);
     }
 }

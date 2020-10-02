@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public class RockCollision : MonoBehaviour
 {
-    //Creating variables
+    //Creating objects
    
     public GameObject player, lifeOne, lifeTwo, lifeThree;
-    public Button button;
     public AudioSource hit;
     public int life;
+    public GameObject rockPanel, endPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,10 +51,10 @@ public class RockCollision : MonoBehaviour
             //If life reaches 0, game over.
             if (life == 0)
             {
-                
+                endPanel.gameObject.SetActive(true);
                 lifeOne.gameObject.SetActive(false);
                 player.gameObject.SetActive(false);
-                button.gameObject.SetActive(true);
+                rockPanel.gameObject.SetActive(false);
             }
         }
     }

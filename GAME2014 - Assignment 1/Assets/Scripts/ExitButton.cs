@@ -5,10 +5,13 @@ using UnityEngine.UI;
 
 public class ExitButton : MonoBehaviour
 {
+
+    // Creating objects
     public Button button;
     // Start is called before the first frame update
     void Start()
     {
+        //Enable Button Click
         button.onClick.AddListener(SetButton);
     }
 
