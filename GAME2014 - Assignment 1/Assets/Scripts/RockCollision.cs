@@ -53,10 +53,6 @@ public class RockCollision : MonoBehaviour
             //If life reaches 0, game over.
             if (life == 0)
             {
-                foreach (GameObject Rocks in GameObject.FindGameObjectsWithTag("Rock"))
-                 {
-                    Rocks.SetActive(true);
-                }
                 endPanel.gameObject.SetActive(true);
                 lifeOne.gameObject.SetActive(false);
                 player.gameObject.SetActive(false);
