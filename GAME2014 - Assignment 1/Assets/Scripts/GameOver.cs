@@ -7,6 +7,7 @@ public class GameOver : MonoBehaviour
 {
 
     public Button button;
+    public GameObject player;
     public GameObject endPanel, mainPanel;
     // Start is called before the first frame update
     void Start()
@@ -18,12 +19,15 @@ public class GameOver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+     
     }
 
     public void SetButton()
 
     {
+
+        RockCollision ps = player.GetComponent<RockCollision>();
+        ps.life = 3;
         endPanel.SetActive(false);
         mainPanel.SetActive(true);
     }

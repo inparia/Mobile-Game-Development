@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,6 +30,7 @@ public class RockCollision : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
+        
         if (col.gameObject.tag.Equals("Rock"))
         {
 
@@ -51,6 +53,10 @@ public class RockCollision : MonoBehaviour
             //If life reaches 0, game over.
             if (life == 0)
             {
+                foreach (GameObject Rocks in GameObject.FindGameObjectsWithTag("Rock"))
+                 {
+                    Rocks.SetActive(true);
+                }
                 endPanel.gameObject.SetActive(true);
                 lifeOne.gameObject.SetActive(false);
                 player.gameObject.SetActive(false);
