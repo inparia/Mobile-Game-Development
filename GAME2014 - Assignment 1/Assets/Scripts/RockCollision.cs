@@ -8,10 +8,10 @@ public class RockCollision : MonoBehaviour
 {
     //Creating objects
    
-    public GameObject player, lifeOne, lifeTwo, lifeThree;
+    public GameObject player, lifeOne, lifeTwo, lifeThree, key;
     public AudioSource hit;
     public int life;
-    public GameObject rockPanel, endPanel;
+    public GameObject rockPanel, endPanel, winPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +30,7 @@ public class RockCollision : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        
+        //Check Rock Collision
         if (col.gameObject.tag.Equals("Rock"))
         {
 
@@ -61,7 +61,19 @@ public class RockCollision : MonoBehaviour
                 lifeOne.gameObject.SetActive(false);
                 player.gameObject.SetActive(false);
                 rockPanel.gameObject.SetActive(false);
+                key.SetActive(false);
             }
+
+
+        }
+
+        //Check Key Collision
+        if (col.gameObject.tag.Equals("Win"))
+        {
+            player.gameObject.SetActive(false);
+            rockPanel.gameObject.SetActive(false);
+            winPanel.SetActive(true);
+            key.SetActive(false);
         }
     }
 }
